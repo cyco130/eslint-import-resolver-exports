@@ -1,0 +1,14 @@
+lockfileVersion: 5.4
+
+specifiers:
+  resolve.exports: ^1.1.0
+
+dependencies:
+  resolve.exports: 1.1.0
+
+packages:
+
+  /resolve.exports/1.1.0:
+    resolution: {integrity: sha512-J1l+Zxxp4XK3LUDZ9m60LRJF/mAe4z6a4xyabPHk7pvK5t35dACV32iIjJDFeWZFfZlO29w6SZ67knR0tHzJtQ==}
+    engines: {node: '>=10'}
+    dev: false
