@@ -16,7 +16,19 @@ module.exports = {
         project: [__dirname + "/tsconfig.json"],
       },
       exports: {
-        // There are no config options currently so leave this empty
+        // Accepts the same options as the `resolve.exports` package
+        // See: https://github.com/lukeed/resolve.exports#optionsunsafe
+
+        // All optional, default values are shown
+
+        // Add "require" field to the conditions
+        require: false,
+        // Add "browser" field to the conditions
+        browser: false,
+        // List of additional/custom conditions
+        conditions: [],
+        // Ignore everything except the `conditions` option
+        unsafe: false,
       },
     },
   },

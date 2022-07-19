@@ -7,9 +7,9 @@ const fs = require("fs");
 /**
  * @param {string} source source
  * @param {string} file file
- * @param {Object} _config config
+ * @param {import("resolve.exports").Options} config config
  */
-const resolve = (source, file, _config) => {
+const resolve = (source, file, config) => {
   if (source.startsWith(".") || source.startsWith("/")) {
     return { found: false };
   }
@@ -28,7 +28,11 @@ const resolve = (source, file, _config) => {
     const pkg = JSON.parse(fs.readFileSync(pkgFile, "utf8"));
 
     const { name, module, main, exports } = pkg;
-    const resolved = resolveExports({ name, module, main, exports }, source);
+    const resolved = resolveExports(
+      { name, module, main, exports },
+      source,
+      config
+    );
 
     if (!resolved) {
       return { found: false };
