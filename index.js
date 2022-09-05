@@ -53,16 +53,22 @@ const resolve = (source, file, config) => {
  * @param {string} packageName
  */
 function findPackageJson(filepath, packageName) {
-  filepath = filepath.replace(/\/$/, "/");
-  while (filepath !== "/") {
-    const pkgFile = filepath + "/node_modules/" + packageName + "/package.json";
+  for (;;) {
+    const pkgFile = path.join(
+      filepath,
+      "node_modules",
+      packageName,
+      "package.json"
+    );
     if (fs.existsSync(pkgFile)) {
       return pkgFile;
     }
-    filepath = path.dirname(filepath);
+    const dir = path.dirname(filepath);
+    if (dir === filepath) {
+      return null;
+    }
+    filepath = dir;
   }
-
-  return null;
 }
 
 module.exports = {

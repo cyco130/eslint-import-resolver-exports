@@ -4,14 +4,15 @@ This package adds [`package.json#exports`](https://nodejs.org/api/packages.html#
 
 ## Usage
 
-Install with `npm install -D eslint-import-resolver-exports` and add it as a resolver to your ESLint configuration:
+Install with `npm install -D eslint-import-resolver-exports` and add it as a resolver to your ESLint configuration. You should always include another resolver (e.g. `eslint-import-resolver-node` or `eslint-import-resolver-typescript`) since this resolver only supports `package.json#exports` and not the other Node.js resolution features.
+
+Example config:
 
 ```js
 module.exports = {
   // ... other configuration options
   settings: {
     "import/resolver": {
-      // If you use TypeScript
       typescript: {
         project: [__dirname + "/tsconfig.json"],
       },
