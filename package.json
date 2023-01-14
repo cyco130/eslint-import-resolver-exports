@@ -1,6 +1,6 @@
 {
   "name": "eslint-import-resolver-exports",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "`package.json` `exports` field resolver for `eslint-plugin-import`",
   "author": "Fatih Aygün <cyco130@gmail.com>",
   "repository": "https://github.com/cyco130/eslint-import-resolver-exports",
@@ -13,6 +13,6 @@
     "eslint-plugin-import": "*"
   },
   "dependencies": {
-    "resolve.exports": "^1.1.0"
+    "resolve.exports": "^1.1.1"
   }
 }
