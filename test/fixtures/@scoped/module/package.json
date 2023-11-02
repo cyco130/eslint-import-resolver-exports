@@ -1,0 +1,8 @@
+{
+  "name": "@scoped/module",
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    }
+  }
+}
