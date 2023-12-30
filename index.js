@@ -27,20 +27,25 @@ const resolve = (source, file, config) => {
 
     const pkg = JSON.parse(fs.readFileSync(pkgFile, "utf8"));
 
-    const { name, module, main, exports } = pkg;
-    const resolved = resolveExports(
-      { name, module, main, exports },
-      source,
-      config
-    );
-
-    if (!resolved) {
+    if (pkg.name !== packageName) {
       return { found: false };
     }
 
-    const moduleId = path.resolve(path.dirname(pkgFile), resolved);
+    const resolved = resolveExports(pkg, source, config);
 
-    return { found: true, path: moduleId };
+    if (!resolved || !resolved.length) {
+      return { found: false };
+    }
+
+    for (const r of resolved) {
+      const moduleId = path.join(path.dirname(pkgFile), r);
+
+      if (fs.existsSync(moduleId)) {
+        return { found: true, path: moduleId };
+      }
+    }
+
+    return { found: false };
   } catch (err) {
     return { found: false };
   }

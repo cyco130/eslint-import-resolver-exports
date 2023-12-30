@@ -13,6 +13,6 @@
     "eslint-plugin-import": "*"
   },
   "dependencies": {
-    "resolve.exports": "^1.1.1"
+    "resolve.exports": "^2.0.2"
   }
 }
