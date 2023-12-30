@@ -27,9 +27,9 @@ const resolve = (source, file, config) => {
 
     const pkg = JSON.parse(fs.readFileSync(pkgFile, "utf8"));
 
-    const { name, module, main, exports } = pkg;
+    const { module, main, exports } = pkg;
     const resolved = resolveExports(
-      { name, module, main, exports },
+      { name: packageName, module, main, exports },
       source,
       config
     );

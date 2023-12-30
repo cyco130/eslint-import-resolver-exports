@@ -1,0 +1,8 @@
+{
+  "name": "module",
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    }
+  }
+}
