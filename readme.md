@@ -1,3 +1,7 @@
+> ⚠️**LOOKING FOR A MAINTAINER**⚠️
+>
+> I'm not maintaining this package anymore because I have no time and `eslint-import-resolver-typescript` meets my needs. Contact me (cyco130) on Discord or Twitter if you're interested. 
+
 # eslint-import-resolver-exports
 
 This package adds [`package.json#exports`](https://nodejs.org/api/packages.html#exports) support to [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import) using the [resolve.exports](https://github.com/lukeed/resolve.exports) package.
